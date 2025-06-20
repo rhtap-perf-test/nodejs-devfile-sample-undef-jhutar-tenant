@@ -13,6 +13,9 @@ RUN \
 # Copy the dependencies into a Slim Node docker image
 FROM registry.access.redhat.com/ubi10/nodejs-22-minimal:latest
 
+# Include licences
+COPY LICENSE /licenses/LICENSE
+
 # Install app dependencies
 COPY --from=0 /opt/app-root/src/node_modules /opt/app-root/src/node_modules
 COPY . /opt/app-root/src
